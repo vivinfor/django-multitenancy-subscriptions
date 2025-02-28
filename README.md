@@ -1,19 +1,20 @@
 # Django Multitenancy + Subscriptions
 
 ## 📌 Visão Geral
-Este projeto demonstra a implementação de um sistema **multitenant** em Django com suporte a **assinaturas (subscriptions)**. Cada tenant pode ter sua própria configuração e plano de assinatura, garantindo uma separação eficiente dos dados e funcionalidades.
+Este projeto implementa um sistema **multitenant** em Django com suporte a **assinaturas (subscriptions)**. Cada tenant tem sua própria configuração e plano de assinatura, garantindo separação eficiente de dados e funcionalidades.
 
 ## 🚀 Tecnologias Utilizadas
 - **Django** – Framework web para back-end.
-- **Django Tenants** – Gerenciamento de múltiplos tenants.
-- **PostgreSQL** – Banco de dados com suporte a schemas separados para cada tenant.
-- **Stripe (ou outro gateway de pagamento)** – Para gerenciamento de assinaturas.
+- **PostgreSQL** – Banco de dados com suporte a múltiplos tenants.
 - **Django REST Framework (DRF)** – API para comunicação entre frontend e backend.
+- **Django Simple JWT** – Autenticação via JWT.
+- **Django Extensions** – Ferramentas auxiliares para desenvolvimento.
+- **Django Simple History** – Histórico de mudanças nos dados.
 
 ## 🎯 Funcionalidades
-- 🌍 **Multitenancy:** Cada cliente tem seu próprio ambiente isolado.
+- 🌍 **Multitenancy:** Cada cliente tem um ambiente isolado.
 - 💳 **Sistema de Assinaturas:** Controle de planos pagos por tenant.
-- 🔑 **Autenticação e Permissões:** Controle de acesso baseado em tenant.
+- 🔑 **Autenticação e Permissões:** Controle de acesso baseado no tenant.
 - 📊 **Administração Separada:** Interface administrativa específica para cada tenant.
 
 ## 🛠️ Como Rodar o Projeto Localmente
@@ -36,33 +37,42 @@ Crie um arquivo `.env` baseado no `.env.example` e configure os valores necessá
 ```bash
 cp .env.example .env
 ```
-Edite o arquivo `.env` e adicione as configurações do banco de dados, chave da API de pagamentos e outras informações.
+Edite o arquivo `.env` e adicione as configurações do banco de dados, chave secreta e outros detalhes.
 
 ### 4️⃣ Execute as Migrações do Banco de Dados
 ```bash
-python manage.py migrate_schemas --shared
+python manage.py migrate
 ```
 
 ### 5️⃣ Criar um Tenant
 ```bash
-python manage.py create_tenant --domain=empresa1.localhost --schema=empresa1
+python manage.py shell
+```
+Em seguida, execute:
+```python
+from tenants.models import Tenant
+Tenant.objects.create(name="Empresa1", is_active=True, is_subscribed=True)
 ```
 
-### 6️⃣ Iniciar o Servidor
+### 6️⃣ Criar um Superusuário
+```bash
+python manage.py createsuperuser
+```
+
+### 7️⃣ Iniciar o Servidor
 ```bash
 python manage.py runserver
 ```
-Acesse: `http://empresa1.localhost:8000/`
+Acesse: `http://127.0.0.1:8000/`
 
-## 📌 Configuração das Assinaturas
-Este projeto utiliza **Stripe** (ou outro gateway de pagamento) para gerenciar os planos de assinatura dos tenants.
-
-1. Configure suas **chaves da API** no `.env`.
-2. Adicione os planos no Stripe.
-3. Utilize os webhooks do Stripe para atualizar o status das assinaturas no Django.
+## 📌 Configuração de Assinaturas
+O projeto permite gerenciar planos de assinatura diretamente pelo Django Admin. Para adicionar planos:
+1. Acesse `/admin` e entre com seu superusuário.
+2. Cadastre novos planos de assinatura em "Subscriptions > Plans".
+3. Associe um plano ao tenant na interface de administração.
 
 ## 📸 Prints / Demonstração (Opcional)
-Se tiver capturas de tela ou vídeos do sistema em funcionamento, adicione aqui!
+Adicione capturas de tela ou vídeos do sistema em funcionamento aqui.
 
 ## 🤝 Contribuições
 Sinta-se à vontade para contribuir com este projeto! Basta seguir os passos:
@@ -76,3 +86,4 @@ Sinta-se à vontade para contribuir com este projeto! Basta seguir os passos:
 Este projeto está licenciado sob a **MIT License**.
 
 🚀 Desenvolvido por [Seu Nome](https://github.com/seu-usuario)
+
