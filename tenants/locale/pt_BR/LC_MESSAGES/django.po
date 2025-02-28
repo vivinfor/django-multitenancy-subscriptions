@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-29 12:05-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: tenants/models.py:16
+msgid "Name"
+msgstr ""
+
+#: tenants/models.py:17
+msgid "Created At"
+msgstr ""
+
+#: tenants/models.py:18
+msgid "Updated At"
+msgstr ""
+
+#: tenants/models.py:24
+msgid "Plan"
+msgstr ""
+
+#: tenants/models.py:26
+msgid "Is Subscribed"
+msgstr ""
+
+#: tenants/models.py:27
+msgid "Is Active"
+msgstr ""
+
+#: tenants/models.py:34
+msgid "Appointment Settings"
+msgstr ""
+
+#: tenants/models.py:69
+msgid "Tenant"
+msgstr ""
+
+#: tenants/models.py:71
+msgid "Domain"
+msgstr ""
+
+#: tenants/models.py:72
+msgid "Is Primary"
+msgstr ""
+
+#: tenants/models.py:81
+msgid "O domínio fornecido não é válido."
+msgstr ""
+
+#: tenants/models.py:108
+msgid "Role"
+msgstr ""

@@ -1,0 +1,183 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de ambiente
+.env
+.env.*
+*.ini
+*.cfg
+*.toml
+config.json
+
+# Scripts e anotações locais
+setup.sh
+Anotações.md
+anotacoes.md
+
+# Extensões Cython / C
+*.so
+
+# Bancos de Dados e Cache
+db.sqlite3
+db.sqlite3-journal
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.bak
+*.lock
+*.pyo
+*.pid
+*.seed
+*.dump
+*.cache
+*.swp
+*.swo
+
+# Arquivos do Django
+local_settings.py
+migrations/
+*/migrations/*  # Mantém apenas a pasta, mas exclui arquivos de migrations
+__pycache__/
+media/
+staticfiles/
+
+# Flask
+instance/
+.webassets-cache
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Pytest e Cobertura de Código
+.coverage
+.coverage.*
+.tox/
+.nox/
+.pytest_cache/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Relatórios do Sphinx
+docs/_build/
+
+# Dependências do Python
+.Python
+env/
+venv/
+ENV/
+venv.bak/
+.env/
+env.bak/
+.venv/
+requirements.in
+__pypackages__/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Build e Distribuição
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Arquivos do VS Code
+.vscode/
+
+# Arquivos do PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+workspace.xml
+
+# Configurações do Rope (Python refactoring tool)
+.ropeproject/
+
+# mkdocs
+/site
+
+# mypy static type checker
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Node.js e dependências npm/yarn
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de Logs
+*.log
+*.log.*
+*.out
+*.err
+logs/
+tmp/
+temp/
+
+# Excluir configurações específicas do projeto
+pdm.lock
+poetry.lock
+.pdm.toml
+.pdm-python
+.pdm-build/
+.pipfile
+.pipfile.lock
+
+# Ignorar arquivos de migração, mas manter o __init__.py
+*/migrations/*.py[cod]
+*/migrations/000*.py  # Evita arquivos de migração iniciais
+!*/migrations/__init__.py  # Manter o __init__.py
+
+
+# ===================== #
+# 📌 PASTAS DO WINDOWS  #
+# ===================== #
+/Contacts/
+/Documents/
+/Downloads/
+/Favorites/
+/Links/
+/Microsoft/
+/Music/
+/OneDrive/
+/Pictures/
+/Saved Games/
+/Searches/
+/Videos/
+/.ssh/
+/.vscode/
