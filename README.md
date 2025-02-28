@@ -85,5 +85,5 @@ Sinta-se à vontade para contribuir com este projeto! Basta seguir os passos:
 ## 📝 Licença
 Este projeto está licenciado sob a **MIT License**.
 
-🚀 Desenvolvido por [Seu Nome](https://github.com/seu-usuario)
+🚀 Desenvolvido por [Viviana](https://github.com/vivinfor)
 
