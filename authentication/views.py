@@ -8,7 +8,6 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 
-from authentication.forms import ProfileForm
 from .models import CustomUser
 
 class UserProfileView(LoginRequiredMixin, UpdateView):
