@@ -4,6 +4,9 @@ from django.core.exceptions import ValidationError
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, cpf, email, password=None, tenant=None, **extra_fields):
+        """
+        Cria e retorna um usuário normal.
+        """
         if not cpf or not email or not tenant:
             raise ValueError("CPF, Email e Tenant são obrigatórios.")
         email = self.normalize_email(email)
@@ -13,11 +16,26 @@ class CustomUserManager(BaseUserManager):
         return user
 
     def create_superuser(self, cpf, email, password=None, **extra_fields):
+        """
+        Cria e retorna um superusuário, garantindo que tenha um tenant atribuído.
+        """
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
+
         if not password:
             raise ValueError("Superusuários precisam de uma senha.")
+
+        from django.apps import apps
+        Tenant = apps.get_model("tenants", "Tenant")
+
+        tenant = Tenant.objects.first()
+        if not tenant:
+            tenant = Tenant.objects.create(name="AdminTenant")
+
+        extra_fields["tenant"] = tenant
+
         return self.create_user(cpf, email, password, **extra_fields)
+
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     tenant = models.ForeignKey('tenants.Tenant', on_delete=models.CASCADE, related_name="custom_users")
