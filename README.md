@@ -71,9 +71,10 @@ O projeto permite gerenciar planos de assinatura diretamente pelo Django Admin. 
 2. Cadastre novos planos de assinatura em "Subscriptions > Plans".
 3. Associe um plano ao tenant na interface de administração.
 
-## 📸 Prints / Demonstração (Opcional)
-Adicione capturas de tela ou vídeos do sistema em funcionamento aqui.
+## 📸 Prints / Demonstração
 
+![   
+](image.png)
 ## 🤝 Contribuições
 Sinta-se à vontade para contribuir com este projeto! Basta seguir os passos:
 1. Faça um fork do repositório.
