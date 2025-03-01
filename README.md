@@ -73,8 +73,9 @@ O projeto permite gerenciar planos de assinatura diretamente pelo Django Admin. 
 
 ## 📸 Prints / Demonstração
 
-![   
-](image.png)
+![Demonstração](static/images/image-01.png)
+static/images/image.png
+
 ## 🤝 Contribuições
 Sinta-se à vontade para contribuir com este projeto! Basta seguir os passos:
 1. Faça um fork do repositório.
