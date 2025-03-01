@@ -1,81 +1,40 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django Multitenancy</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/flowbite@1.6.3/dist/flowbite.min.js"></script>
-</head>
-<body class="bg-gray-100">
+{% extends 'base.html' %}
 
-    <!-- Navbar -->
-    <nav class="bg-blue-600 p-4 text-white shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold">Multitenancy</a>
-            <ul class="flex space-x-6">
-                <li><a href="#" class="hover:underline">Home</a></li>
-                <li><a href="#" class="hover:underline">Planos</a></li>
-                <li><a href="#" class="hover:underline">Sobre</a></li>
-                <li><a href="/admin" class="hover:underline">Admin</a></li>
-            </ul>
-        </div>
-    </nav>
+{% block title %}Home | Django Multitenancy{% endblock %}
 
-    <!-- Hero Section -->
-    <header class="text-center py-16 bg-blue-500 text-white">
-        <h1 class="text-4xl font-bold">Gerencie múltiplos tenants com facilidade</h1>
-        <p class="mt-4 text-lg">Uma solução escalável para SaaS e multi-empresas.</p>
-        <a href="/login" class="mt-6 inline-block bg-white text-blue-600 px-6 py-2 rounded-lg shadow-md hover:bg-gray-200">
-            Comece Agora
+{% block content %}
+<div class="text-center mt-10">
+    <h1 class="text-4xl font-bold text-gray-800">Gerenciamento Multitenancy com Django</h1>
+    <p class="text-lg text-gray-600 mt-4">Crie, gerencie e personalize seus tenants e assinaturas facilmente.</p>
+    
+    <div class="mt-6 flex justify-center space-x-4">
+        <a href="{% url 'subscriptions:plans' %}" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+            Explorar Planos
         </a>
-    </header>
-
-    <!-- Seção de Aplicações -->
-    <section class="container mx-auto py-16">
-        <h2 class="text-3xl font-bold text-center mb-8">Funcionalidades</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <!-- Authentication -->
-            <div class="p-6 bg-white shadow-lg rounded-lg text-center">
-                <img src="https://www.svgrepo.com/show/276264/authentication.svg" class="h-16 mx-auto mb-4" alt="Autenticação">
-                <h3 class="text-xl font-semibold">Autenticação</h3>
-                <p class="mt-2 text-gray-600">Gerencie usuários e permissões com autenticação segura via JWT.</p>
-                <a href="/authentication/" class="text-blue-600 mt-4 inline-block hover:underline">Saiba mais</a>
-            </div>
-
-            <!-- Subscriptions -->
-            <div class="p-6 bg-white shadow-lg rounded-lg text-center">
-                <img src="https://www.svgrepo.com/show/276259/subscription.svg" class="h-16 mx-auto mb-4" alt="Assinaturas">
-                <h3 class="text-xl font-semibold">Assinaturas</h3>
-                <p class="mt-2 text-gray-600">Controle de planos, pagamentos e faturamento para múltiplos tenants.</p>
-                <a href="/subscriptions/" class="text-blue-600 mt-4 inline-block hover:underline">Saiba mais</a>
-            </div>
-
-            <!-- Tenants -->
-            <div class="p-6 bg-white shadow-lg rounded-lg text-center">
-                <img src="https://www.svgrepo.com/show/276261/multitenancy.svg" class="h-16 mx-auto mb-4" alt="Tenants">
-                <h3 class="text-xl font-semibold">Gerenciamento de Tenants</h3>
-                <p class="mt-2 text-gray-600">Organize dados isolados para cada cliente de forma eficiente.</p>
-                <a href="/tenants/" class="text-blue-600 mt-4 inline-block hover:underline">Saiba mais</a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Chamada para Ação -->
-    <section class="bg-blue-500 text-white py-16 text-center">
-        <h2 class="text-3xl font-bold">Pronto para começar?</h2>
-        <p class="mt-4 text-lg">Crie sua conta e gerencie múltiplos clientes com facilidade.</p>
-        <a href="/register" class="mt-6 inline-block bg-white text-blue-600 px-6 py-2 rounded-lg shadow-md hover:bg-gray-200">
+        <a href="{% url 'authentication:register' %}" class="px-6 py-3 bg-gray-300 text-gray-800 rounded-lg shadow hover:bg-gray-400 transition">
             Criar Conta
         </a>
-    </section>
+    </div>
 
-    <!-- Rodapé -->
-    <footer class="bg-gray-900 text-gray-400 text-center py-4">
-        <p>© 2025 Django Multitenancy | Todos os direitos reservados</p>
-    </footer>
+    <!-- Cards de Demonstração -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        <div class="bg-white p-6 shadow-md rounded-lg">
+            <i class="fas fa-users text-blue-600 text-4xl"></i>
+            <h3 class="text-xl font-semibold mt-4">Tenants Isolados</h3>
+            <p class="text-gray-600 mt-2">Cada cliente possui um ambiente seguro e independente.</p>
+        </div>
 
-</body>
-</html>
+        <div class="bg-white p-6 shadow-md rounded-lg">
+            <i class="fas fa-credit-card text-blue-600 text-4xl"></i>
+            <h3 class="text-xl font-semibold mt-4">Assinaturas Flexíveis</h3>
+            <p class="text-gray-600 mt-2">Planos personalizados para diferentes tipos de clientes.</p>
+        </div>
+
+        <div class="bg-white p-6 shadow-md rounded-lg">
+            <i class="fas fa-chart-line text-blue-600 text-4xl"></i>
+            <h3 class="text-xl font-semibold mt-4">Painel Gerencial</h3>
+            <p class="text-gray-600 mt-2">Visualize métricas e gerencie seus clientes com facilidade.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
