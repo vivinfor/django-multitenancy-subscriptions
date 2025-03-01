@@ -1,40 +1,79 @@
 {% extends 'base.html' %}
 
-{% block title %}Home | Django Multitenancy{% endblock %}
+{% block title %}Django Multitenancy - Gestão de Tenants e Assinaturas{% endblock %}
 
 {% block content %}
 <div class="text-center mt-10">
-    <h1 class="text-4xl font-bold text-gray-800">Gerenciamento Multitenancy com Django</h1>
-    <p class="text-lg text-gray-600 mt-4">Crie, gerencie e personalize seus tenants e assinaturas facilmente.</p>
-    
-    <div class="mt-6 flex justify-center space-x-4">
-        <a href="{% url 'subscriptions:plans' %}" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
-            Explorar Planos
+    <h1 class="text-5xl font-extrabold text-gray-800">Gerenciamento Multitenancy & Assinaturas</h1>
+    <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+        Solução completa para gerenciar múltiplos clientes, assinaturas e permissões de forma isolada e segura, utilizando as melhores tecnologias do mercado.
+    </p>
+
+    <div class="mt-8 flex justify-center space-x-4">
+        <a href="/admin/" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition">
+            Acessar Admin
         </a>
-        <a href="{% url 'authentication:register' %}" class="px-6 py-3 bg-gray-300 text-gray-800 rounded-lg shadow hover:bg-gray-400 transition">
-            Criar Conta
+        <a href="https://github.com/vivinfor/django-multitenancy-subscriptions" target="_blank" class="px-6 py-3 bg-gray-300 text-gray-800 rounded-lg shadow-lg hover:bg-gray-400 transition">
+            Ver Código Fonte
         </a>
     </div>
 
-    <!-- Cards de Demonstração -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-        <div class="bg-white p-6 shadow-md rounded-lg">
+    <!-- Seções de Destaque -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+
+        <!-- Tenants Isolados -->
+        <div class="bg-white p-6 shadow-lg rounded-lg">
             <i class="fas fa-users text-blue-600 text-4xl"></i>
-            <h3 class="text-xl font-semibold mt-4">Tenants Isolados</h3>
-            <p class="text-gray-600 mt-2">Cada cliente possui um ambiente seguro e independente.</p>
+            <h3 class="text-xl font-semibold mt-4">Gestão de Tenants</h3>
+            <p class="text-gray-600 mt-2">
+                Cada cliente tem seu próprio ambiente isolado, garantindo segurança e personalização total.
+            </p>
         </div>
 
-        <div class="bg-white p-6 shadow-md rounded-lg">
+        <!-- Assinaturas e Planos -->
+        <div class="bg-white p-6 shadow-lg rounded-lg">
             <i class="fas fa-credit-card text-blue-600 text-4xl"></i>
             <h3 class="text-xl font-semibold mt-4">Assinaturas Flexíveis</h3>
-            <p class="text-gray-600 mt-2">Planos personalizados para diferentes tipos de clientes.</p>
+            <p class="text-gray-600 mt-2">
+                Gerencie planos de assinatura com controle de recursos, pagamentos e permissões específicas.
+            </p>
         </div>
 
-        <div class="bg-white p-6 shadow-md rounded-lg">
-            <i class="fas fa-chart-line text-blue-600 text-4xl"></i>
-            <h3 class="text-xl font-semibold mt-4">Painel Gerencial</h3>
-            <p class="text-gray-600 mt-2">Visualize métricas e gerencie seus clientes com facilidade.</p>
+        <!-- Integrações e Segurança -->
+        <div class="bg-white p-6 shadow-lg rounded-lg">
+            <i class="fas fa-lock text-blue-600 text-4xl"></i>
+            <h3 class="text-xl font-semibold mt-4">Autenticação Segura</h3>
+            <p class="text-gray-600 mt-2">
+                Login seguro com autenticação JWT, controle de permissões e suporte a múltiplas regras de acesso.
+            </p>
         </div>
     </div>
+
+    <!-- Tecnologias Utilizadas -->
+    <h2 class="text-3xl font-bold text-gray-800 mt-16">Tecnologias Utilizadas</h2>
+    <p class="text-lg text-gray-600 mt-2">Este projeto é construído com as seguintes tecnologias de ponta:</p>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+        <div class="flex flex-col items-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg" alt="Django" class="h-12">
+            <span class="text-gray-700 mt-2 font-semibold">Django</span>
+        </div>
+
+        <div class="flex flex-col items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="h-12">
+            <span class="text-gray-700 mt-2 font-semibold">PostgreSQL</span>
+        </div>
+
+        <div class="flex flex-col items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="TailwindCSS" class="h-12">
+            <span class="text-gray-700 mt-2 font-semibold">TailwindCSS</span>
+        </div>
+
+        <div class="flex flex-col items-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Flowbite_logo.svg" alt="Flowbite" class="h-12">
+            <span class="text-gray-700 mt-2 font-semibold">Flowbite</span>
+        </div>
+    </div>
+
 </div>
 {% endblock %}
