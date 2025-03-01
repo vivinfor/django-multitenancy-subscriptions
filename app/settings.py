@@ -89,6 +89,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'app.middleware.LastListViewMiddleware',
     'app.middleware.ErrorHandlingMiddleware',
+    'app.middleware.CustomErrorMiddleware',
+
 
 ]
 
