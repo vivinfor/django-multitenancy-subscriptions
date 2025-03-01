@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Configurações de Segurança
 # ====================================================
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'default-unsafe-key')
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1').split(',')
 
 ROOT_URLCONF = 'app.urls'
